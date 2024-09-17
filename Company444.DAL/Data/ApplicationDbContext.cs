@@ -10,15 +10,19 @@ using System.Threading.Tasks;
 
 namespace Company444.DAL.Data
 {
-    internal class ApplicationDbContext :DbContext
+    public class ApplicationDbContext :DbContext
     {
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server = .; Database = MVCCompany444; Trusted_Connection = true;");
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+        {
+
+        }
+
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.ApplyConfiguration<Department>(new DepartmentConfigrations());
+            
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
         }
