@@ -16,7 +16,7 @@ namespace Company444.PL.Controllers
         public IActionResult Index()
         {
             var departments = _DepartmentsRepo.GetAll();
-            return View();
+            return View(departments);
         }
     }
 }
