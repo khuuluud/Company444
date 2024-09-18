@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Company444.BLL.Repositories
 {
-    internal class RepoDepartment : IDepartmentRepository
+    public class RepoDepartment : IDepartmentRepository
     {
         private readonly ApplicationDbContext _DbContext;
 

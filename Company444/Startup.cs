@@ -1,4 +1,7 @@
+using Company444.BLL.Interfaces;
+using Company444.BLL.Repositories;
 using Company444.DAL.Data;
+using Company444.DAL.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,8 +36,8 @@ namespace Company444
  
 
             });
-            
-        
+
+            services.AddScoped<IDepartmentRepository , RepoDepartment>();
         } 
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
